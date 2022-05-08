@@ -5,6 +5,8 @@ public class Solution {
         
         while(n != 0){
             count += (n & 1);
+            
+            // Use >>> instead of >> for unsigned
             n = n >>> 1;
         }
         
