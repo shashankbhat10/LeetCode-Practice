@@ -29,21 +29,15 @@ class Solution {
         int maxV = 0;
         
         for(int i=0; i<diffH.length; i++){
-            System.out.println(diffH[i]);
             maxH = Math.max(maxH, diffH[i]);
         }
         
         for(int i=0; i<diffV.length; i++){
-            System.out.println(diffV[i]);
             maxV = Math.max(maxV, diffV[i]);
         }
         
-        System.out.println(maxH);
-        System.out.println(maxV);
         
         long ans = 1L * maxH * maxV;
-        System.out.println(ans);
-        System.out.println(ans % 1000000007);
         
         return (int)(ans % 1000000007); 
     }
