@@ -19,29 +19,35 @@ class Node {
 
 class Solution {
     public Node insert(Node head, int insertVal) {
-        Node newNode = new Node(insertVal);
         if(head == null){
+            Node newNode = new Node(insertVal, null);
             newNode.next = newNode;
             return newNode;
         }
         
-        Node curr = head.next;
         Node prev = head;
-        while(curr != head){
-            if(prev.val <= newNode.val && newNode.val <= curr.val)
-                break;
-            else if(prev.val > curr.val && prev.val <= newNode.val)
-                break;
-            else if(prev.val > curr.val && curr.val >= newNode.val)
-                break;
-            else{
-                prev = curr;
-                curr = curr.next;
-            }
-        }
+        Node curr = head.next;
+        boolean insert = false;
         
-        prev.next = newNode;
-        newNode.next = curr;
+        do{
+            if(prev.val <= insertVal && insertVal <= curr.val){
+                insert = true;
+            } else if(prev.val > curr.val){
+                if(insertVal >= prev.val || insertVal <= curr.val)
+                    insert = true;
+            }
+            
+            if(insert){
+                Node newNode = new Node(insertVal, curr);
+                prev.next = newNode;
+                return head;
+            }
+            
+            prev = curr;
+            curr = curr.next;
+        }while(prev != head);
+        
+        prev.next = new Node(insertVal, curr);
         return head;
     }
 }
