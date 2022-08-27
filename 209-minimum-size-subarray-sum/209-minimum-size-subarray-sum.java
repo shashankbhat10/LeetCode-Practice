@@ -16,8 +16,6 @@ class Solution {
             right++;
         }
 
-        System.out.println(left);
-        System.out.println(right);
         if(minLength == Integer.MAX_VALUE)
             return 0;
         
