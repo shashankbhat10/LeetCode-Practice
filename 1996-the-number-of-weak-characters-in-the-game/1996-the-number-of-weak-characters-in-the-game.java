@@ -12,10 +12,7 @@ class Solution {
         int max = Integer.MIN_VALUE;
         int result = 0;
         
-        
-        System.out.println("Hello");
         for(int i=properties.length - 1; i >= 0; i--){
-            System.out.println(properties[i][0] + ", " + properties[i][1]);
             if(properties[i][1] < max)
                 result++;
             
