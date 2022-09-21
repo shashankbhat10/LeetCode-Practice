@@ -21,7 +21,6 @@ class Solution {
         if(i < 0 || j < 0 || i >= grid2.length || j >= grid2[0].length || visited[i][j] == -1 || grid2[i][j] == 0)
             return true;
         
-        // System.out.println(i + ", " + j);
         visited[i][j] = -1;
                   
         boolean up = checkSubIsland(grid1, grid2, i-1, j, visited);
