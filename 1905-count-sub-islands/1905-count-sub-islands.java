@@ -6,7 +6,7 @@ class Solution {
         for(int i=0; i<grid2.length; i++){
             for(int j=0; j<grid2[0].length; j++){
                 if(visited[i][j] == 0 && grid2[i][j] == 1 && checkSubIsland(grid1, grid2, i, j, visited)){
-                    System.out.println(i + ", " + j);
+                    // System.out.println(i + ", " + j);
                     count++;
                 } 
                 else if(grid2[i][j] == 1){
