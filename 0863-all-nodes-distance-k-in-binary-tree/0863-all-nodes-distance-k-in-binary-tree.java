@@ -15,7 +15,6 @@ class Solution {
         adjList = new HashMap<Integer, List<Integer>>();
         buildGraph(root);
         
-        // System.out.println(adjList.keySet().size());
         if(adjList.keySet().size() == 0 && k > 0)
             return new ArrayList<Integer>();
         else if(k == 0){
@@ -23,15 +22,6 @@ class Solution {
             temp.add(target.val);
             return temp;
         }
-        
-        // for(int key : adjList.keySet()){
-        //     System.out.println("key: " + key);
-        //     List<Integer> temp = adjList.get(key);
-        //     for(int num : temp){
-        //         System.out.print(num + ", ");
-        //     }
-        //     System.out.println();
-        // }
         
         Queue<Integer> queue = new LinkedList<Integer>();
         queue.add(target.val);
