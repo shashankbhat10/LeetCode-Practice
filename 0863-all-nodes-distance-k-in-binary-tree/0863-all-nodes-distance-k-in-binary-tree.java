@@ -35,7 +35,6 @@ class Solution {
             while(size > 0){
                 int num = queue.remove();
                 List<Integer> temp = adjList.get(num);
-                // System.out.println("num: " + num + ", size: " + temp.size());
                 for(int n : temp){
                     if(!set.contains(n)){
                         queue.add(n);
