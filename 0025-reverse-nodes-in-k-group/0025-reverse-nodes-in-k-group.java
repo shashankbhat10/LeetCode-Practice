@@ -18,7 +18,6 @@ class Solution {
         prevHead.next = head;
         ListNode curr = head;
         
-        // breakLoop = false;
         while(true){
             int len = 0;
             ListNode startNode = curr;
@@ -31,22 +30,18 @@ class Solution {
             if(len < k)
                 break;
             
-            System.out.println("length: " + len);
             afterTail = curr;
             ListNode newHead = reverseList(startNode, k);
-            System.out.println("newHead: " + newHead.val);
             prevHead.next = newHead;
             
             while(len != 1){
                 newHead = newHead.next;
                 len--;
             }
-            System.out.println("newTail: " + newHead.val);
             newHead.next = afterTail;
             prevHead = newHead;
             newHead = newHead.next;
             curr = newHead;
-            // System.out.println(curr.val);
         }
         
         return tempHead.next;
