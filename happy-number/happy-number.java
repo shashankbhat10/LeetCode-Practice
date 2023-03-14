@@ -17,7 +17,7 @@ class Solution {
             if(set.contains(temp))
                 return false;
             set.add(temp);
-            temp = getSum(temp);
+            temp = digitSum(temp);
             // System.out.println(temp);
         }
         return true;
